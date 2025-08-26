@@ -1,0 +1,33 @@
+{
+  "id": "gaja_kesari_yoga",
+  "description": "Jupiter in a kendra (1/4/7/10) from the Moon. Stronger if Jupiter/Moon are in supportive signs; cancelled if either is debilitated.",
+  "orb_deg": 10,
+  "signals": [
+    {
+      "id": "jup_from_moon_kendra",
+      "predicate": "kendra_from",
+      "params": { "a": "Jupiter", "b": "Moon", "include_conjunction": true }
+    },
+
+    {
+      "id": "jupiter_good_sign",
+      "predicate": "planet_in_signs",
+      "params": { "planet": "Jupiter", "signs": [4,5,9,12] }
+    },
+    {
+      "id": "moon_good_sign",
+      "predicate": "planet_in_signs",
+      "params": { "planet": "Moon", "signs": [2,4,5] }
+    },
+
+    { "id": "jupiter_debilitated", "predicate": "planet_debilitated", "params": { "planet": "Jupiter" } },
+    { "id": "moon_debilitated",    "predicate": "planet_debilitated", "params": { "planet": "Moon" } }
+  ],
+  "weights": {
+    "jup_from_moon_kendra": 0.70,
+    "jupiter_good_sign":    0.20,
+    "moon_good_sign":       0.10
+  },
+  "strong_if": "jup_from_moon_kendra and jupiter_good_sign and not jupiter_debilitated and not moon_debilitated",
+  "active_if": "jup_from_moon_kendra and not jupiter_debilitated and not moon_debilitated"
+}

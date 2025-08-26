@@ -1,0 +1,20 @@
+{
+  "id": "fortune_from_l9_exalt_karaka",
+  "description": "If the 9th lord’s exaltation sign (from Asc) maps to a house whose natural karaka(s) connect with 2L/5L/9L/11L by any connection or by 5-9 / 3-11 house distance, activate.",
+  "orb_deg": 10,
+  "signals": [
+    {
+      "id": "l9_exalt_karaka_links",
+      "predicate": "l9_exaltation_karaka_relations",
+      "params": { "target_houses": [2,5,9,11], "orb_deg": 10 }
+    }
+  ],
+  "weights": {
+    "l9_exalt_karaka_links": 1.0
+  },
+  "strength_weights": {
+    "l9_exalt_karaka_links": true
+  },
+  "strong_if": "l9_exalt_karaka_links",
+  "active_if": "l9_exalt_karaka_links"
+}

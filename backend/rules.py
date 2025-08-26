@@ -18,7 +18,7 @@ KARAKA_HOUSES = {
     "Moon":    [4],
     "Mars":    [3, 6],
     "Mercury": [3, 5, 10],
-    "Jupiter": [2, 5, 9],
+    "Jupiter": [2, 5, 9, 11],
     "Venus":   [4, 7, 12],
     "Saturn":  [6, 8, 12]
 }
