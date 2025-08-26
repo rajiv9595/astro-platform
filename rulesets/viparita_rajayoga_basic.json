@@ -1,0 +1,24 @@
+{
+  "id": "viparita_rajayoga_basic",
+  "description": "Any two dusthana lords (6/8/12) active via placement and connection.",
+  "orb_deg": 30,
+  "signals": [
+    {"id": "l6_in_dusthana",  "predicate": "planet_in_house_group_from_asc", "params": {"planet": "lord(6)",  "group": "dusthana"}},
+    {"id": "l8_in_dusthana",  "predicate": "planet_in_house_group_from_asc", "params": {"planet": "lord(8)",  "group": "dusthana"}},
+    {"id": "l12_in_dusthana", "predicate": "planet_in_house_group_from_asc", "params": {"planet": "lord(12)", "group": "dusthana"}},
+
+    {"id": "l6_l8_link",  "predicate": "any_connection", "params": {"a": "lord(6)",  "b": "lord(8)",  "orb_deg": 8}},
+    {"id": "l6_l12_link", "predicate": "any_connection", "params": {"a": "lord(6)",  "b": "lord(12)", "orb_deg": 8}},
+    {"id": "l8_l12_link", "predicate": "any_connection", "params": {"a": "lord(8)",  "b": "lord(12)", "orb_deg": 8}}
+  ],
+  "weights": {
+    "l6_in_dusthana": 0.3,
+    "l8_in_dusthana": 0.3,
+    "l12_in_dusthana": 0.3,
+    "l6_l8_link": 0.4,
+    "l6_l12_link": 0.4,
+    "l8_l12_link": 0.4
+  },
+  "strong_if": "(l6_l8_link or l6_l12_link or l8_l12_link) and ((l6_in_dusthana and l8_in_dusthana) or (l6_in_dusthana and l12_in_dusthana) or (l8_in_dusthana and l12_in_dusthana))",
+  "active_if": "l6_in_dusthana or l8_in_dusthana or l12_in_dusthana or l6_l8_link or l6_l12_link or l8_l12_link"
+}

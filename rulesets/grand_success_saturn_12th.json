@@ -1,0 +1,20 @@
+{
+  "id": "grand_success_saturn_12th",
+  "description": "Grand success via Saturn ↔ 12th-lord dynamics",
+  "orb_deg": 30,
+  "signals": [
+    {"id": "saturn_in_l12_karaka_houses", "predicate": "planet_in_karaka_houses_of", "params": {"planet": "Saturn", "of": "lord(12th)"}},
+    {"id": "saturn_in_l12_karaka_places", "predicate": "planet_in_karaka_places_of", "params": {"planet": "Saturn", "of": "lord(12th)"}},
+    {"id": "l12_in_saturn_signs",         "predicate": "planet_in_signs",            "params": {"planet": "lord(12th)", "signs": [10,11]}},
+    {"id": "mutual_aspect",               "predicate": "mutual_aspect_hybrid",       "params": {"a": "Saturn", "b": "lord(12th)"}}
+  ],
+  "weights": {
+    "saturn_in_l12_karaka_houses": 0.65,
+    "saturn_in_l12_karaka_places": 0.15,
+    "l12_in_saturn_signs": 0.25,
+    "mutual_aspect": 0.60
+  },
+  "strength_weights": { "mutual_aspect": true },
+  "strong_if": "mutual_aspect and (saturn_in_l12_karaka_houses or l12_in_saturn_signs or saturn_in_l12_karaka_places)",
+  "active_if": "saturn_in_l12_karaka_houses or l12_in_saturn_signs or saturn_in_l12_karaka_places or mutual_aspect"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "neechabhanga_venus_v1",
+  "description": "Basic NBRY for Venus: if debilitated in Virgo, check rescue by exaltation/debilitation lords or kendra placement.",
+  "orb_deg": 30,
+  "signals": [
+    {"id": "venus_debil", "predicate": "planet_debilitated", "params": {"planet": "Venus"}},
+    {"id": "rescue_by_exalt_lord", "predicate": "exaltation_lord_support", "params": {"planet": "Venus", "orb_deg": 10}},
+    {"id": "rescue_by_debil_lord", "predicate": "debilitation_lord_support", "params": {"planet": "Venus", "orb_deg": 10}},
+    {"id": "venus_in_kendra", "predicate": "planet_in_house_group_from_asc", "params": {"planet": "Venus", "group": "kendra"}}
+  ],
+  "weights": {
+    "venus_debil": 0.0,
+    "rescue_by_exalt_lord": 0.6,
+    "rescue_by_debil_lord": 0.5,
+    "venus_in_kendra": 0.3
+  },
+  "strong_if": "venus_debil and ((rescue_by_exalt_lord) or (rescue_by_debil_lord and venus_in_kendra))",
+  "active_if": "venus_debil and (rescue_by_exalt_lord or rescue_by_debil_lord or venus_in_kendra)"
+}

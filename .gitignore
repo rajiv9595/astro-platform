@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors/IDE
+.vscode/
+.idea/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.env
+.env.*
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+dist/
+build/
+coverage/
+.next/
+out/
+.turbo/
+
+# General caches
+.cache/
+*.log
+
+# Misc binaries / databases
+*.sqlite3
+*.db
+*.pid
+*.seed
