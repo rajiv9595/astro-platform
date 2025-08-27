@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Astro Rule",
+  "type": "object",
+  "required": [
+    "id",
+    "signals"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "orb_deg": {
+      "type": "number"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "predicate"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "weights": {
+      "type": "object"
+    },
+    "strength_weights": {
+      "type": "object"
+    },
+    "active_if": {
+      "type": "string"
+    },
+    "strong_if": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

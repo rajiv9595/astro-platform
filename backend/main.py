@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 from .ephemeris import compute_chart
-from .rules_engine import reload_rules, RULES_CACHE, evaluate_rule, evaluate_all
+from .rules_engine import reload_rules, RULES_CACHE, evaluate_rule, evaluate_all, rules_dir, RULE_ERRORS
 
 app = FastAPI(title="Next-Gen Astro Platform")
 
@@ -47,3 +47,9 @@ def rules_eval_one(rule_id: str, body: ChartIn):
     if not rule:
         return {"error": f"Rule '{rule_id}' not loaded. Call /rules/reload or check /rules/list."}
     return evaluate_rule(chart, rule)
+
+@app.get("/rules/debug")
+def rules_debug():
+    rd = rules_dir()
+    files = os.listdir(rd) if os.path.isdir(rd) else []
+    return {"rules_dir": rd, "files": files, "loaded": list(RULES_CACHE.keys()), "errors": RULE_ERRORS}

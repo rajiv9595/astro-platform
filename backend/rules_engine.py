@@ -4,7 +4,13 @@ from typing import Dict, Any, List, Tuple
 from typing import Dict, Union
 # ------------ Core tables ------------
 SIGNS = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"]
-SIGN_LORD = {1:"Mars",2:"Venus",3:"Mercury",4:"Moon",5:"Sun",6:"Mercury",7:"Venus",8:"Mars",9:"Jupiter",10:"Saturn",11:"Saturn",12:"Jupiter"}
+
+SIGN_LORD = {
+    1: "Mars", 2: "Venus", 3: "Mercury", 4: "Moon",
+    5: "Sun", 6: "Mercury", 7: "Venus", 8: "Mars",
+    9: "Jupiter", 10: "Saturn", 11: "Saturn", 12: "Jupiter"
+}
+
 EXALTATION = {"Sun":1,"Moon":2,"Mars":10,"Mercury":6,"Jupiter":4,"Venus":12,"Saturn":7}
 MOOLA      = {"Sun":5,"Moon":2,"Mars":1,"Mercury":6,"Jupiter":9,"Venus":7,"Saturn":11}
 DEBILITATION = {"Sun":7,"Moon":8,"Mars":4,"Mercury":12,"Jupiter":10,"Venus":6,"Saturn":1}
