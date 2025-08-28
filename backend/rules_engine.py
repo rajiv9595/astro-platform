@@ -9,13 +9,13 @@ EXALTATION = {"Sun":1,"Moon":2,"Mars":10,"Mercury":6,"Jupiter":4,"Venus":12,"Sat
 MOOLA      = {"Sun":5,"Moon":2,"Mars":1,"Mercury":6,"Jupiter":9,"Venus":7,"Saturn":11}
 DEBILITATION = {"Sun":7,"Moon":8,"Mars":4,"Mercury":12,"Jupiter":10,"Venus":6,"Saturn":1}
 KARAKA_HOUSES = {
-    "Sun":[1,9,10],
+    "Sun":[1],
     "Moon":[4],
     "Mars":[3,6],
-    "Mercury":[3,5,10],
-    "Jupiter":[2,5,9],
-    "Venus":[4,7,12],
-    "Saturn":[6,8,12]
+    "Mercury":[10],
+    "Jupiter":[2,5,9,11],
+    "Venus":[7],
+    "Saturn":[8,12]
 }
 HOUSE_GROUPS = {"kendra":[1,4,7,10],"trikona":[1,5,9],"dusthana":[6,8,12],"upachaya":[3,6,10,11]}
 SPECIAL_SIGN_ASPECTS = {"Mars":{4,7,8},"Jupiter":{5,7,9},"Saturn":{3,7,10}}  # others = 7th only
