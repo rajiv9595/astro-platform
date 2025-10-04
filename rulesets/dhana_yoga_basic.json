@@ -5,23 +5,19 @@
   "signals": [
     { "id": "l2_l11_connect", "predicate": "any_connection", "params": { "a": "lord(2)",  "b": "lord(11)", "orb_deg": 8 } },
     { "id": "l2_l9_conj",     "predicate": "conjunction",   "params": { "a": "lord(2)",  "b": "lord(9)",  "orb_deg": 8 } },
-
     { "id": "l2_in_kendra",   "predicate": "planet_in_house_group_from_asc", "params": { "planet": "lord(2)",  "group": "kendra"  } },
     { "id": "l11_in_kendra",  "predicate": "planet_in_house_group_from_asc", "params": { "planet": "lord(11)", "group": "kendra"  } },
     { "id": "l2_in_trikona",  "predicate": "planet_in_house_group_from_asc", "params": { "planet": "lord(2)",  "group": "trikona" } },
     { "id": "l11_in_trikona", "predicate": "planet_in_house_group_from_asc", "params": { "planet": "lord(11)", "group": "trikona" } },
-
     { "id": "parivartana_2_11","predicate": "lord_exchange", "params": { "a": "lord(2)", "b": "lord(11)" } }
   ],
   "weights": {
     "l2_l11_connect": 0.60,
     "l2_l9_conj":     0.65,
-
     "l2_in_kendra":   0.25,
     "l11_in_kendra":  0.25,
     "l2_in_trikona":  0.20,
     "l11_in_trikona": 0.20,
-
     "parivartana_2_11": 0.80
   },
   "strength_weights": {

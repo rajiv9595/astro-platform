@@ -1,0 +1,20 @@
+{
+  "id": "career_benefic_support_10th",
+  "description": "Career lift if benefics occupy/aspect the 10th house; reduced if malefics dominate.",
+  "orb_deg": 30,
+  "signals": [
+    { "id": "ben_occ_10", "predicate": "benefics_occupy_house_from_asc", "params": { "house": 10 } },
+    { "id": "ben_asp_10", "predicate": "benefics_aspect_house_from_asc", "params": { "house": 10 } },
+    { "id": "mal_occ_10", "predicate": "malefics_occupy_house_from_asc", "params": { "house": 10 } },
+    { "id": "mal_asp_10", "predicate": "malefics_aspect_house_from_asc", "params": { "house": 10 } }
+  ],
+  "weights": {
+    "ben_occ_10": 0.7,
+    "ben_asp_10": 0.5,
+    "mal_occ_10": -0.5,
+    "mal_asp_10": -0.3
+  },
+  "strength_weights": { "ben_asp_10": true, "mal_asp_10": true },
+  "strong_if": "(ben_occ_10 or ben_asp_10) and not mal_occ_10 and not mal_asp_10",
+  "active_if": "ben_occ_10 or ben_asp_10 or mal_occ_10 or mal_asp_10"
+}

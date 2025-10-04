@@ -1,0 +1,11 @@
+{
+  "id": "career_sav10_boost_lite",
+  "description": "Boost when 10th-house AV-lite score is high.",
+  "orb_deg": 30,
+  "signals": [
+    { "id": "sav10_high", "predicate": "sav_lite_threshold", "params": { "house": 10, "min": 0.8 } }
+  ],
+  "weights": { "sav10_high": 1.0 },
+  "strong_if": "sav10_high",
+  "active_if": "sav10_high"
+}

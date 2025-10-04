@@ -1,0 +1,19 @@
+{
+  "id": "yogakaraka_basic",
+  "description": "Detect Yogakāraka(s) for the Ascendant and check strength/placement.",
+  "orb_deg": 30,
+  "signals": [
+    { "id": "has_yk",        "predicate": "any_yogakaraka", "params": {} },
+    { "id": "yk_in_kendra",  "predicate": "yogakaraka_in_group_from_asc", "params": { "group": "kendra" } },
+    { "id": "yk_in_trikona", "predicate": "yogakaraka_in_group_from_asc", "params": { "group": "trikona" } },
+    { "id": "yk_strong",     "predicate": "yogakaraka_strong_place", "params": {} }
+  ],
+  "weights": {
+    "has_yk": 0.2,
+    "yk_in_kendra": 0.5,
+    "yk_in_trikona": 0.5,
+    "yk_strong": 0.7
+  },
+  "strong_if": "has_yk and (yk_in_kendra or yk_in_trikona) and yk_strong",
+  "active_if": "has_yk and (yk_in_kendra or yk_in_trikona or yk_strong)"
+}

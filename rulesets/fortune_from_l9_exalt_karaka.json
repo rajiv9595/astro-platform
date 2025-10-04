@@ -1,20 +1,25 @@
 {
   "id": "fortune_from_l9_exalt_karaka",
-  "description": "If the 9th lord’s exaltation sign (from Asc) maps to a house whose natural karaka(s) connect with 2L/5L/9L/11L by any connection or by 5-9 / 3-11 house distance, activate.",
-  "orb_deg": 10,
+  "description": "Fortune when the 9th lord is exalted / supported by its exaltation-lord and/or linked to Jupiter (natural karaka of the 9th).",
+  "orb_deg": 12,
   "signals": [
-    {
-      "id": "l9_exalt_karaka_links",
-      "predicate": "l9_exaltation_karaka_relations",
-      "params": { "target_houses": [2,5,9,11], "orb_deg": 10 }
-    }
+    { "id": "l9_exalted",                  "predicate": "planet_in_exaltation",          "params": { "planet": "lord(9)" } },
+    { "id": "l9_exalt_lord_support",       "predicate": "exaltation_lord_support",       "params": { "planet": "lord(9)", "orb_deg": 10 } },
+    { "id": "l9_jupiter_link",             "predicate": "any_connection",                "params": { "a": "lord(9)", "b": "Jupiter", "orb_deg": 10 } },
+    { "id": "l9_in_jupiter_karaka_places", "predicate": "planet_in_karaka_places_of",    "params": { "planet": "lord(9)", "of": "Jupiter" } },
+    { "id": "l9_in_kendra",                "predicate": "planet_in_house_group_from_asc","params": { "planet": "lord(9)", "group": "kendra" } }
   ],
   "weights": {
-    "l9_exalt_karaka_links": 1.0
+    "l9_exalted": 0.30,
+    "l9_exalt_lord_support": 0.60,
+    "l9_jupiter_link": 0.60,
+    "l9_in_jupiter_karaka_places": 0.35,
+    "l9_in_kendra": 0.20
   },
   "strength_weights": {
-    "l9_exalt_karaka_links": true
+    "l9_exalt_lord_support": true,
+    "l9_jupiter_link": true
   },
-  "strong_if": "l9_exalt_karaka_links",
-  "active_if": "l9_exalt_karaka_links"
+  "strong_if": "(l9_exalted or l9_in_jupiter_karaka_places or l9_in_kendra) and (l9_jupiter_link or l9_exalt_lord_support)",
+  "active_if": "l9_exalted or l9_in_jupiter_karaka_places or l9_in_kendra or l9_jupiter_link or l9_exalt_lord_support"
 }
